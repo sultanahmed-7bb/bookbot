@@ -11,5 +11,12 @@ def word_count(file_path):
     words = book_text.split()
     print(f'Found {len(words)} total words')
 
-def main():
-    word_count("books/frankenstein.txt")
+def char_count(file_path):
+    text = get_book_text(file_path)
+    alphabet = "abcdefghijklmnopqrstuvwxyz"
+    chars = {}
+    for char in alphabet:
+        count = text.lower().count(char)
+        chars[char] = count
+    print(chars)
+
