@@ -15,8 +15,19 @@ def char_count(file_path):
     text = get_book_text(file_path)
     alphabet = "abcdefghijklmnopqrstuvwxyz"
     chars = {}
+    count_report = ""
     for char in alphabet:
         count = text.lower().count(char)
         chars[char] = count
-    print(chars)
+        count_report += f"{char}: {count}\n" 
+    print(count_report)
+
+def report(file_path):
+    print("============ BOOKBOT ============")
+    print(f"Analyzing file found at {file_path}...")
+    print("----------- Word Count ----------")
+    word_count(file_path)
+    print("--------- Character Count -------")
+    char_count(file_path)
+    print("============== END ==============")
 
